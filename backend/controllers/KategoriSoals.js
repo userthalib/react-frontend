@@ -1,34 +1,34 @@
-import KategoriSoals from "../models/KategoriSoalModel.js";
-// import User from "../models/UserModel.js";
+import KategoriSoal from "../models/KategoriSoalModel.js";
+import User from "../models/UserModel.js";
 // import {Op} from "sequelize";
 
 export const getKategoriSoals = async (req, res) =>{
-    // try {
-    //     let response;
-    //     if(req.role === "admin"){
-    //         response = await Product.findAll({
+    try {
+        let response;
+        if(req.role === "admin"){
+            response = await KategoriSoal.findAll({
     //             attributes:['uuid','name','price'],
-    //             include:[{
-    //                 model: User,
+                include:[{
+                    model: User
     //                 attributes:['name','email']
-    //             }]
-    //         });
-    //     }else{
-    //         response = await Product.findAll({
-    //             attributes:['uuid','name','price'],
-    //             where:{
-    //                 userId: req.userId
-    //             },
-    //             include:[{
-    //                 model: User,
+                }]
+            });
+        }else{
+            response = await KategoriSoal.findAll({
+                // attributes:['uuid','name','price'],
+                where:{
+                    userId: req.userId
+                },
+                include:[{
+                    model: User
     //                 attributes:['name','email']
-    //             }]
-    //         });
-    //     }
-    //     res.status(200).json(response);
-    // } catch (error) {
-    //     res.status(500).json({msg: error.message});
-    // }
+                }]
+            });
+        }
+        res.status(200).json(response);
+    } catch (error) {
+        res.status(500).json({msg: error.message});
+    }
 }
 
 export const getKategoriSoalById = async(req, res) =>{

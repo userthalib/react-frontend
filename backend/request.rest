@@ -1,14 +1,40 @@
-//Create user
-POST http://localhost:5001/users
+###
+//Get current user
+GET http://localhost:5001/me
+
+###
+//Login admin
+POST http://localhost:5001/login
 Content-Type: application/json
 
 {
-    "name": "Thalib",
-    "email": "thalib@gmail.com",
-    "password": "123456",
-    "confPassword": "123456",
-    "role": "user"
+    "email": "irfan@gmail.com",
+    "password": "123456"
 }
+
+###
+//Login dosen
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "alfarid@gmail.com",
+    "password": "123456"
+}
+
+###
+//Login user
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "thalib@gmail.com",
+    "password": "123456"
+}
+
+###
+//Logout
+DELETE http://localhost:5001/logout
 
 ###
 //Get all users
@@ -16,7 +42,20 @@ GET http://localhost:5001/users
 
 ###
 //Get user by id
-GET http://localhost:5001/users/f8f6dd03-3269-4851-8532-b1d2e19da9d3
+GET http://localhost:5001/users/ecfe7003-2bdd-48b7-87ed-e0f315c1f01b
+
+###
+//Create user
+POST http://localhost:5001/users
+Content-Type: application/json
+
+{
+    "name": "Alfarid",
+    "email": "alfarid@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "dosen"
+}
 
 ###
 //Update user
@@ -36,33 +75,5 @@ Content-Type: application/json
 DELETE http://localhost:5001/users/f8f6dd03-3269-4851-8532-b1d2e19da9d3
 
 ###
-//Login admin
-POST http://localhost:5001/login
-Content-Type: application/json
-
-{
-    "email": "irfan@gmail.com",
-    "password": "123456"
-}
-
-###
-//Login user
-POST http://localhost:5001/login
-Content-Type: application/json
-
-{
-    "email": "thalib@gmail.com",
-    "password": "123456"
-}
-
-###
-//Get current user
-GET http://localhost:5001/me
-
-###
-//Logout
-DELETE http://localhost:5001/logout
-
-
-git branch -M main
-git push -u origin main
+//Get all kategori soal
+GET http://localhost:5001/kategori_soal
