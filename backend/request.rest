@@ -36,12 +36,22 @@ Content-Type: application/json
 DELETE http://localhost:5001/users/f8f6dd03-3269-4851-8532-b1d2e19da9d3
 
 ###
-//Login
+//Login admin
 POST http://localhost:5001/login
 Content-Type: application/json
 
 {
     "email": "irfan@gmail.com",
+    "password": "123456"
+}
+
+###
+//Login user
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "thalib@gmail.com",
     "password": "123456"
 }
 
