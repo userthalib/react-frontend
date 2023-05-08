@@ -77,3 +77,28 @@ DELETE http://localhost:5001/users/f8f6dd03-3269-4851-8532-b1d2e19da9d3
 ###
 //Get all kategori soal
 GET http://localhost:5001/kategori_soal
+
+###
+//Get kategori soal by id
+GET http://localhost:5001/kategori_soal/12a3f8d6-8281-4618-89f1-c893d4c223f8
+
+###
+//create kategori soal
+POST http://localhost:5001/kategori_soal
+Content-Type: application/json
+
+{
+    "name": "Matematika"
+}
+
+###
+//Update kategori soal
+PATCH http://localhost:5001/kategori_soal/949e4a76-4921-45f0-b1d7-a67986f6055e
+
+{
+    "name": "Biologi2"
+}
+
+###
+//Delete kategori soal
+DELETE http://localhost:5001/kategori_soal/949e4a76-4921-45f0-b1d7-a67986f6055e
